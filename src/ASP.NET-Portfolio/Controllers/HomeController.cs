@@ -1,5 +1,5 @@
-﻿using ASP_NET_Portfolio.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using ASP_NET_Portfolio.Models;
 
 namespace ASP_NET_Portfolio.Controllers
 {
