@@ -10,8 +10,7 @@ namespace ASP.NET_Portfolio.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            GithubProfile.GetInfo();
-            return View();
+            return View(GithubProfile.GetInfo());
         }
     }
 }
