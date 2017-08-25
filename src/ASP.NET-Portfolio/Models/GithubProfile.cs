@@ -43,14 +43,14 @@ namespace ASP_NET_Portfolio.Models
         public int owned_private_repos { get; set; }
         public int private_gists { get; set; }
         public int disk_usage { get; set; }
-        public int collaborators { get; set; }
-
-            
+        public int collaborators { get; set; }      
 
         public static GithubProfile GetInfo()
         {
             var client = new RestClient("https://api.github.com");
-            var request = new RestRequest("/user?access_token=" + EnvironmentalVariables.AuthToken);
+            var request = new RestRequest("/user?access_token=" + EnvironmentalVariables.AccessToken + "&client_id=" + EnvironmentalVariables.AuthToken + "&client_secret=" + EnvironmentalVariables.AuthSecret);
+            request.AddHeader("User-Agent", "HunterTParks");
+            //client.Authenticator = new HttpBasicAuthenticator(EnvironmentalVariables.AuthToken, EnvironmentalVariables.AuthSecret);
             var response = new RestResponse();
 
             Task.Run(async () =>
@@ -58,8 +58,10 @@ namespace ASP_NET_Portfolio.Models
                 response = await GetResponseContentAsync(client, request) as RestResponse;
             }).Wait();
 
+            Console.WriteLine(response.Content);
+
             JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
-            var user = JsonConvert.DeserializeObject<GithubProfile>(jsonResponse["content"].ToString());
+            var user = JsonConvert.DeserializeObject<GithubProfile>(jsonResponse.ToString());
             return user;
         }
 
