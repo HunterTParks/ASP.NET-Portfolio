@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ASP.NET_Portfolio.Models
 {
-    public class User
+    public class GithubProfile
     {
         public class RootObject
         {
@@ -47,7 +47,7 @@ namespace ASP.NET_Portfolio.Models
             public int disk_usage { get; set; }
             public int collaborators { get; set; }
 
-            public static User GetInfo()
+            public static GithubProfile GetInfo()
             {
                 var client = new RestClient("https://api.github.com");
                 var request = new RestRequest("/user?access_token=" + EnvironmentalVariables.AuthToken);
@@ -59,7 +59,7 @@ namespace ASP.NET_Portfolio.Models
                 }).Wait();
 
                 JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
-                var user = JsonConvert.DeserializeObject<User>(jsonResponse["content"].ToString());
+                var user = JsonConvert.DeserializeObject<GithubProfile>(jsonResponse["content"].ToString());
                 return user;
             }
 
