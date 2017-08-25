@@ -65,6 +65,24 @@ namespace ASP_NET_Portfolio.Models
             return user;
         }
 
+        public static List<Repos> GetStarredRepos()
+        {
+            var client = new RestClient("https://api.github.com");
+            var request = new RestRequest("/search?q=user%3AHunterTParks+&s=stars&type=Repositories");
+            request.AddHeader("User-Agent", "HunterTParks");
+            var response = new RestResponse();
+
+            Task.Run(async () =>
+            {
+                response = await GetResponseContentAsync(client, request) as RestResponse;
+            }).Wait();
+
+            JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
+            var repositories = JsonConvert.DeserializeObject<List<Repos>>(jsonResponse.ToString());
+
+            return repositories;
+        }
+
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
         {
             var tcs = new TaskCompletionSource<IRestResponse>();
