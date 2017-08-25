@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ASP.NET_Portfolio.Models
+namespace ASP_NET_Portfolio.Models
 {
     public class Repos
     {

@@ -1,5 +1,9 @@
-﻿@model ASP_NET_Portfolio.Models.GithubProfile
+﻿@model ASP_NET_Portfolio.ViewModels.UserRepos
 
-<p>@Model.name</p>
-<p>@Model.bio</p>
-<p>@Model.starred_url</p>
+<p>@Model.user.name</p>
+@foreach(var repo in Model.starredRepos)
+{
+    <p>@repo.name</p>
+
+}
+

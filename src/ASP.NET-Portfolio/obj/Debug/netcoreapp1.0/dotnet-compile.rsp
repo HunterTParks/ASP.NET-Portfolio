@@ -1,5 +1,5 @@
---temp-output:c:\users\reptar2693\documents\visual studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\obj\Debug\netcoreapp1.0\
---out:c:\users\reptar2693\documents\visual studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\bin\Debug\netcoreapp1.0\ASP.NET-Portfolio.dll
+--temp-output:C:\Users\reptar2693\Documents\Visual Studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\obj\Debug\netcoreapp1.0\
+--out:C:\Users\reptar2693\Documents\Visual Studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\bin\Debug\netcoreapp1.0\ASP.NET-Portfolio.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -171,9 +171,11 @@
 --reference:C:\Users\reptar2693\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\reptar2693\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
 --reference:C:\Users\reptar2693\.nuget\packages\System.Xml.XmlSerializer\4.0.11\ref\netstandard1.3\System.Xml.XmlSerializer.dll
---resource:"c:\users\reptar2693\documents\visual studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\obj\Debug\netcoreapp1.0\ASP.NET-Portfoliodotnet-compile.deps.json",ASP.NET-Portfolio.deps.json
-c:\users\reptar2693\documents\visual studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\Program.cs
-c:\users\reptar2693\documents\visual studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\Startup.cs
-c:\users\reptar2693\documents\visual studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\Controllers\HomeController.cs
-c:\users\reptar2693\documents\visual studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\Models\EnvironmentalVariables.cs
-c:\users\reptar2693\documents\visual studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\Models\GithubProfile.cs
+--resource:"C:\Users\reptar2693\Documents\Visual Studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\obj\Debug\netcoreapp1.0\ASP.NET-Portfoliodotnet-compile.deps.json",ASP.NET-Portfolio.deps.json
+C:\Users\reptar2693\Documents\Visual Studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\Program.cs
+C:\Users\reptar2693\Documents\Visual Studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\Startup.cs
+C:\Users\reptar2693\Documents\Visual Studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\Controllers\HomeController.cs
+C:\Users\reptar2693\Documents\Visual Studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\Models\EnvironmentalVariables.cs
+C:\Users\reptar2693\Documents\Visual Studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\Models\GithubProfile.cs
+C:\Users\reptar2693\Documents\Visual Studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\Models\Repos.cs
+C:\Users\reptar2693\Documents\Visual Studio 2015\Projects\ASP.NET-Portfolio\src\ASP.NET-Portfolio\ViewModels\UserRepos.cs

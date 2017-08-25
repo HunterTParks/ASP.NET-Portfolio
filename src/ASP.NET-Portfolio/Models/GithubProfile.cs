@@ -4,7 +4,6 @@ using Newtonsoft.Json.Linq;
 using RestSharp;
 using RestSharp.Authenticators;
 using System.Threading.Tasks;
-using ASP.NET_Portfolio.Models;
 using System.Collections.Generic;
 
 namespace ASP_NET_Portfolio.Models
@@ -60,8 +59,6 @@ namespace ASP_NET_Portfolio.Models
                 response = await GetResponseContentAsync(client, request) as RestResponse;
             }).Wait();
 
-            Console.WriteLine(response.Content);
-
             JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
             var user = JsonConvert.DeserializeObject<GithubProfile>(jsonResponse.ToString());
             return user;
@@ -70,7 +67,7 @@ namespace ASP_NET_Portfolio.Models
         public static List<Repos> GetStarredRepos()
         {
             var client = new RestClient("https://api.github.com");
-            var request = new RestRequest("/users/HunterTParks/repos?sort=stargazers");
+            var request = new RestRequest("/users/amzn/repos?sort=stargazers");
             request.AddHeader("User-Agent", "HunterTParks");
             var response = new RestResponse();
 
@@ -79,20 +76,26 @@ namespace ASP_NET_Portfolio.Models
                 response = await GetResponseContentAsync(client, request) as RestResponse;
             }).Wait();
 
-            JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
+            JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(response.Content);
             var repositories = JsonConvert.DeserializeObject<List<Repos>>(jsonResponse.ToString());
 
             List<Repos> starredRepos = new List<Repos> { };
+
             for(int i = 0; i < 2; i++)
             {
-                for(int j = 0; j < repositories.Count; j++)
+                Console.WriteLine("0     ");
+                for (int j = 0; j < repositories.Count; j++)
                 {
-                    for(int k = j + 1; k <= repositories.Count - j; k++)
+                    Console.WriteLine("1     ");
+                    for (int k = j + 1; k < repositories.Count; k++)
                     {
-                        if(k == repositories.Count)
+                        Console.WriteLine("2     repositoriesCount = " + repositories.Count + "     J =" + j + "    K = " + k);
+                        if (k + 1 == repositories.Count)
                         {
+                            Console.WriteLine("3     ");
                             starredRepos.Add(repositories[j]);
-                            starredRepos.Remove(repositories[j]);
+                            repositories.Remove(repositories[j]);
+                            Console.WriteLine("TESTINGHEY");
                             Console.WriteLine(repositories[j].name);
                             j = repositories.Count;
                             continue;
@@ -101,11 +104,12 @@ namespace ASP_NET_Portfolio.Models
                         if(repositories[k].watchers_count > repositories[j].watchers_count)
                         {
                             j = k;
+                            Console.WriteLine("4     ");
                         }
                     }
                 }
             }
-            return repositories;
+            return starredRepos;
         }
 
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
