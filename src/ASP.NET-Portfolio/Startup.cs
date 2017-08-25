@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace ASP.NET_Portfolio
+namespace ASP_NET_Portfolio
 {
     public class Startup
     {

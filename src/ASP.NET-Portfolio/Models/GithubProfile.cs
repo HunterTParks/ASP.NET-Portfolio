@@ -1,12 +1,11 @@
 ﻿using System;
-using ASP.NET_Portfolio.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
 using RestSharp.Authenticators;
 using System.Threading.Tasks;
 
-namespace ASP.NET_Portfolio.Models
+namespace ASP_NET_Portfolio.Models
 {
     public class GithubProfile
     {
