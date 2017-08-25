@@ -47,7 +47,7 @@ namespace ASP.NET_Portfolio.Models
             public int disk_usage { get; set; }
             public int collaborators { get; set; }
 
-            public User GetInfo()
+            public static User GetInfo()
             {
                 var client = new RestClient("https://api.github.com");
                 var request = new RestRequest("/user?access_token=" + EnvironmentalVariables.AuthToken);
