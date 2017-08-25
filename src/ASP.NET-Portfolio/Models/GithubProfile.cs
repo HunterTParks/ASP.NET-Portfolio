@@ -67,7 +67,7 @@ namespace ASP_NET_Portfolio.Models
         public static List<Repos> GetStarredRepos()
         {
             var client = new RestClient("https://api.github.com");
-            var request = new RestRequest("/users/amzn/repos?sort=stargazers");
+            var request = new RestRequest("/users/HunterTParks/repos?sort=stargazers");
             request.AddHeader("User-Agent", "HunterTParks");
             var response = new RestResponse();
 
@@ -81,7 +81,7 @@ namespace ASP_NET_Portfolio.Models
 
             List<Repos> starredRepos = new List<Repos> { };
 
-            for(int i = 0; i < 2; i++)
+            for(int i = 0; i <= 2; i++)
             {
                 Console.WriteLine("0     ");
                 for (int j = 0; j < repositories.Count; j++)

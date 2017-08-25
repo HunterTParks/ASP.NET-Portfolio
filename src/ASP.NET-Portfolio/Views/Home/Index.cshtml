@@ -1,6 +1,7 @@
 ﻿@model ASP_NET_Portfolio.ViewModels.UserRepos
 
 <p>@Model.user.name</p>
+
 @foreach(var repo in Model.starredRepos)
 {
     <p>@repo.name</p>
