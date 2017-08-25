@@ -1,4 +1,5 @@
-﻿using ASP.NET_Portfolio.Models;
+﻿using System;
+using ASP.NET_Portfolio.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
@@ -47,6 +48,11 @@ namespace ASP.NET_Portfolio.Models
             public int disk_usage { get; set; }
             public int collaborators { get; set; }
 
+            public class GithubProfile
+            {
+
+            }
+
             public static GithubProfile GetInfo()
             {
                 var client = new RestClient("https://api.github.com");
@@ -66,10 +72,12 @@ namespace ASP.NET_Portfolio.Models
             public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
             {
                 var tcs = new TaskCompletionSource<IRestResponse>();
-                theClient.ExecuteAsync(theRequest, response => {
+                theClient.ExecuteAsync(theRequest, response =>
+                {
                     tcs.SetResult(response);
                 });
                 return tcs.Task;
             }
         }
+    }
 }
