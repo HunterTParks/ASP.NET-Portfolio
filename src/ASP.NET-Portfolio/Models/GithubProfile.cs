@@ -5,6 +5,7 @@ using RestSharp;
 using RestSharp.Authenticators;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using ASP.NET_Portfolio.Models;
 
 namespace ASP_NET_Portfolio.Models
 {
